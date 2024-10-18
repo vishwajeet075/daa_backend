@@ -64,6 +64,9 @@ async def find_hamilton(graph: Graph):
          # Return a proper response indicating no cycle instead of raising an HTTP exception
         return {"cycle": None, "message": "No Hamiltonian cycle found"}
 
+import os
+import uvicorn
+
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
