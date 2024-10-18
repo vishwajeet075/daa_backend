@@ -9,7 +9,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adjust this to match your frontend URL
+    allow_origins=["https://delicate-tiramisu-6f2924.netlify.app"],  # Adjust this to match your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
